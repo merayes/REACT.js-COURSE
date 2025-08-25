@@ -1,0 +1,72 @@
+:root {
+  --bg: #0b1020;
+  --card: #141a33;
+  --text: #e6e9f2;
+  --muted: #9aa3b2;
+  --primary: #4f46e5;
+  --today: #1f2937;
+}
+
+* { box-sizing: border-box; }
+body, #root, .app { height: 100%; }
+.app {
+  background: radial-gradient(80% 120% at 50% 0%, #111737 0%, #0b1020 60%);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 24px;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.app-header h1 { margin: 0; font-size: 24px; font-weight: 700; }
+
+.city-select { display: flex; align-items: center; gap: 8px; }
+.city-label { color: var(--muted); font-size: 14px; }
+.city-dropdown {
+  background: var(--card);
+  border: 1px solid #2a3355;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.forecast-card {
+  background: var(--card);
+  border: 1px solid #253055;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform .12s ease, border-color .12s ease;
+}
+
+.forecast-card.today {
+  border-color: var(--primary);
+  background: linear-gradient(0deg, rgba(79,70,229,.12), rgba(79,70,229,.12)), var(--card);
+}
+
+.forecast-card:hover { transform: translateY(-2px); }
+
+.day { text-transform: capitalize; color: var(--muted); }
+.icon { font-size: 36px; }
+.temps { display: flex; gap: 8px; align-items: baseline; }
+.tmax { font-weight: 700; }
+.tmin { color: var(--muted); }
+
+.state { color: var(--muted); }
+.state.error { color: #f87171; }
+
