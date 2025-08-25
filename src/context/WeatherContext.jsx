@@ -25,7 +25,7 @@ export function WeatherProvider({ children, defaultCityName = 'İstanbul' }) {
     if (!res.ok) throw new Error('Geocoding failed')
     const data = await res.json()
     const place = data?.results?.[0]
-    if (!place) throw new Error('Şehir bulunamadı')
+    if (!place) throw new Error('Şehir bulunamadı!!')
     return { latitude: place.latitude, longitude: place.longitude, resolvedName: place.name }
   }, [])
 
