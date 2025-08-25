@@ -96,7 +96,7 @@ export function WeatherProvider({ children, defaultCityName = 'İstanbul' }) {
     setLoading(true)
     fetch(url, { signal: controller.signal })
       .then((res) => {
-        if (!res.ok) throw new Error('Hava durumu verisi alınamadı')
+        if (!res.ok) throw new Error('Hava durumu verisi alınamadı!!!')
         return res.json()
       })
       .then((data) => {
